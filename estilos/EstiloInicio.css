@@ -1,0 +1,628 @@
+                                                /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS*******************/
+* { /*estilos para todas las etiquetas. Con esta técnica se establecen en 0 diversos parametros y se ajustan 
+    caracteristicas para hacer la tarea de diseñar mas sencila*/
+    padding: 0mm; /*inicializamos el padding de todos los elementos a 0*/
+    margin: 0mm; /*inicializamos el margin de todos los elementoss a 0*/
+    box-sizing: border-box; /*el tamaño que se de a las cajas va a incluir el borde*/
+    font-family: Arial, Helvetica, sans-serif; /*una fuente manejable y compatible con todos los navegadores*/
+}
+
+.top {/*MENU TOP DE LA PAGINA*/                 /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS*******************/
+    position:sticky;    /*Utilizamos posición sticky para que se quede "pegado" y siempre se mantenga en su posición aunque hagas scroll*/
+    top: 0%;            /*Para que esté totalmente pegado arriba. Si se ponen mas elementos sticky habra que tener en cuenta el alto de este div*/
+    width: 100%;        /*Esta parte ocupará el 100% de nuestra pantalla con la función width*/
+    height: 24px;       /*Le damos una altura de 24px*/
+    background-color: black;    /*Color de fondo negro*/
+    padding-right: 7%;  /*Utilizamos la función padding para que los elementos se adapten a nuestro gusto*/
+    padding-top: 2px;   
+    padding-bottom: 0.2%;      
+    font-size: 15px;    /*El tamaño de la letra será de 15px*/
+    z-index: 100;       /*Damos un z-index elevado para asegurarnos que ningún otro elemento se superpone a él, ya que queremos que esté siempre visible*/
+}    
+
+.menu_top li {
+   display: inline;     /*Display inline para que aunque sea una lista los elementos se alineen de forma horizontal*/
+   float:right;         /*Float right para que su posición parta desde el lado derecho*/
+   margin-right: 2%;    /*Un margin de 2% por la derecha para separar los elementos */
+   text-align: center;  /*Text-align para que nuestro texto se centre*/
+   border-bottom: transparent;  /*Border-bottom para que tan solo afecte al borde de abajo y esté transparente*/
+}
+
+.menu_top li a {
+    text-decoration:none; /*Desactiva los estilos por defecto de los links (Como el subrayado)*/
+    color: white;       /*Damos un color a la letra para que no tenga el color de los links*/
+}
+
+.menu_top li a:hover {      /*Función hover para que actúe al poner el ratón sobre el elemento*/
+    text-decoration:none; /*Desactiva los estilos por defecto de los links*/
+    color:rgb(28, 237, 231);    /*Utilizamos un color de letra azul*/
+    transition: 0.4s;               /*Una breve transición para que no sea instantaneo y quede más estético*/
+    border-bottom:rgb(28, 237, 231) solid 0.2px;    /*Damos color al borde de abajo y tendrá aspecto de texto subrayado*/
+}
+
+.banner { /*PARTE 2 animacion parte principal*/
+    width: 100%;            /*Ancho y alto definidos en porcentaje*/
+    height: 30%;
+    background-color:rgb(5, 39, 38);    /*Color de fondo*/
+    display: flex;           /*Display flex para que el elemento sea flexible y tenga capacidad de adaptación*/
+    align-items: center;     /*Propiedad de alineación vertical*/
+    justify-content: center; /*Propiedad de alineación horizontal*/
+}
+
+.letrad { /*elemento letra D mayuscula*/ 
+    color:rgb(28, 237, 231);
+    font: 2vw 'Zen Dots', cursive;
+    animation-name: letrad; /*nombre de la animación*/
+    animation-duration: 30s; /*duración de la animación*/
+    animation-iteration-count: 1; /*nº de veces que se repite la animación*/
+    animation-fill-mode: forwards; /*indica que el estilo se va a anclar según se defina el 100%(final) de la animación*/
+}
+@keyframes letrad { /*Propiedades le la animacion de la letra D mayúscula*/
+    0%{ /*al 0% es el inicio de la animación, no confundir con el estado inicial que se define en el propio estilo*/
+        opacity: 0; /*opacidad 0 = transparente*/
+    }
+
+    8%{ /*el 8% del total de la animación. con una regla de 3 se podria saber el tiempo exacto. 8*30/100=2.4, esta parte de la animación se daria a los 2.4S
+    desde su inicio*/
+        opacity: 1;   
+    }
+
+    20%{
+        margin:initial; /*se fija la posición inicial para que exista una transicion exclusiva hasta el siguiente paso. en ese 1% se produce el 
+        movimiento de la letra D. */
+    } 
+
+    21%{
+    margin-left: 24% ;
+    }
+    
+    100%{ /*estado final, el cual se queda aplicado en la pantalla con la propiedad  animation-fill-mode: forwards*/
+        margin-left: 24%;   
+    }
+}
+
+.letras { /*elemento letra S mayuscula  la estructura igual a la de la letra D exceptruando las posiciones*/          
+    color:rgb(28, 237, 231);
+    font: 2vw 'Zen Dots', cursive;
+    animation-name: letras;
+    animation-duration: 30s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes letras { /*Propiedades le la animacion de la letra D mayúscula*/
+    0%{ /*al 0% es el inicio de la animación, no confundir con el estado inicial que se define en el propio estilo*/
+        opacity: 0; /*opacidad 0 = transparente*/
+    }
+
+    8%{ /*el 8% del total de la animación. con una regla de 3 se podria saber el tiempo exacto. 8*30/100=2.4, esta parte de la animación se daria a los 2.4S
+    desde su inicio*/
+        opacity: 1;   
+    }
+
+    20%{
+        margin:initial; /*se fija la posición inicial para que exista una transicion exclusiva hasta el siguiente paso. en ese 1% se produce el 
+        movimiento de la letra D. */
+    } 
+
+    21%{
+        margin-left: -12.3% ;
+    }
+    
+    100%{ /*estado final, el cual se queda aplicado en la pantalla con la propiedad  animation-fill-mode: forwards*/
+        margin-left: -12.3%;
+    }
+}
+
+.bordelogobanner {  /*Borde que aparecerá para rodear nuestro logo y completarlo al final de la animación*/
+    position: absolute; /*Posición absoluta para trabajarlo cómodamente*/
+    height: 6%;            /*Lo posicionamos*/
+    width: 4.5%;
+    top: 15.1%;
+    color: #1cede7;
+    border: double 0.5vw #1cede7;
+    font-family: 'Zen Dots';
+    border-top-left-radius: 20px;   /*Hacemos los bordes necesarios redondeados*/
+    border-bottom-right-radius: 20px;
+    animation-name: bordelogobanner;
+    animation-duration: 10s;
+    animation-delay: 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}      
+
+@keyframes bordelogobanner { /*Propiedades le la animacion del borde del logo*/
+   25%{
+       opacity: 1;
+   }
+
+   100%{
+       opacity: 1; /*se finaliza totalmente nitida*/
+   }
+}
+
+.restodiego { /*serian las letras "iego &" que aparecen de color blanco al principio, estado inicial*/          
+    color:white;
+    font: 2vw 'Zen Dots', cursive;
+    margin-right: 1%;
+    animation-name: restodiego;
+    animation-duration: 30s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes restodiego {
+    0%{
+        opacity: 0; /*primero no se ve*/
+    }
+
+    5%{
+        opacity: 1; /*rápidamente, al 5% de la animación, se vuelve nítido*/
+    }
+
+    7%{
+        margin-top: 0%;
+    }
+
+    8%{ /*se baja un poco el contenedor para enseguida, en el siguiente frame volver a subir*/
+        margin-top: 1%;
+    }
+
+    9%{ /*1% después, el elemento vuelve a la posicion original de manera muy rápida dando el efecto de rebote*/
+        margin-top: 0%;
+    }
+
+    10%{
+        margin-top: -500%; /*lo envio fuera de la pantalla, ya con una opacidad de 0*/
+        opacity: 0;
+    }
+
+    11%{
+        opacity: 0;
+    }
+
+    13%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 0; /*estado final transsparente, no se quiere volver a saber nada de este elemento en la animación*/
+    }
+}
+
+.restosergio { /*serian las letras "erfio Fitnes Place" que aparecen de color blanco al principio, estado inicial
+sigue las pautas de .restodiego*/          
+    color:white;        
+    font: 2vw 'Zen Dots', cursive;
+    animation-name: restosergio;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1; 
+}
+
+@keyframes restosergio {
+    0%{
+        opacity: 0;
+    }
+
+    5%{
+        opacity: 1;
+    }
+
+    7%{
+        margin-top: 0%;
+    }
+
+    8%{
+        margin-top: 1%;
+    }
+
+    9%{
+        margin-top: 0%;
+    }
+
+    10%{
+        margin-top: -500%;
+        opacity: 0;
+    }
+
+    11%{
+        opacity: 0;
+    }
+
+    13%{
+        opacity: 0;
+    }
+
+    100%{
+    opacity: 0; 
+    }
+}
+
+.deporte {/*serian las letras "eporte" que aparecen de color verde cuando desaparecen las letras blancas. Sincronizado con la desaparicion de las 
+anteriores*/
+    position: absolute;
+    margin-left: -24.5%;
+    font: 2vw 'Zen Dots', cursive;
+    color:greenyellow;
+    animation-name: deporte;
+    animation-duration: 30s;  
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes deporte {
+    0%{
+        opacity: 0;
+    }
+
+    11%{
+        opacity: 0;
+    }/*en ese intermedio se produce la aparición*/
+
+    12%{
+        opacity: 1;
+    }
+
+    17%{
+        opacity: 1;
+    }
+
+    22%{
+        opacity: 0;
+    }
+
+    100%{
+    opacity: 0; 
+    }
+}
+
+.salud { /*serian las letras "alud" que aparecen de color verde cuando desaparecen las letras blancas. Sincronizado con la desaparicion de las 
+anteriores*/
+    position: absolute;
+    margin-left: -6.5%;
+    font: 2vw 'Zen Dots', cursive;
+    color:greenyellow;
+    animation-name: salud;
+    animation-duration: 30s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 9;
+}
+
+@keyframes salud {
+    0%{
+        opacity: 0;
+    }
+
+    11%{
+        opacity: 0;
+    }
+
+    12%{
+        opacity: 1;
+    }
+
+    17%{
+        opacity: 1;
+    }
+
+    22%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 0; 
+    }
+}
+
+ /*PARTE FRASE ENCABEZADO*/
+
+ .frase { /*fecha de 'presentación'*/
+    position:absolute;
+    opacity: 0;
+    margin-top: 7%;
+    font: 1.5vw 'Zen Dots';
+    color:yellowgreen;
+    animation-name: frase;
+    animation-duration: 10s;
+    animation-delay: 7s; /*es la ultima animación en aparecer*/
+    animation-iteration-count: 1; /*se va a repetir una vez*/
+    animation-fill-mode: forwards;
+}
+
+@keyframes frase { 
+   0%{
+       opacity: 0; /*se inicia totalmente opaca*/
+    }
+
+   25%{
+       opacity: 1;
+    }
+
+   100%{
+       opacity: 1; /*se finaliza totalmente nitida*/
+    }
+}
+
+/*ETIQUETA DE OFERTA DE INICIO*/
+.etiqueta { 
+    position: fixed; /*Mantiene su posición fija pese a hacer scroll*/
+    right: 0%;      /*Damos posición y medidas*/
+    top: 22%;
+    width: 18%;
+    height:7%;
+    background-color: rgb(5, 39, 38);
+    border-top-left-radius: 12px;           /*Bordes deseados redondeados*/
+    border-bottom-left-radius: 12px;
+    border: solid 1px #1cede7;
+    border-right: none;                     /*Omitimos el borde derecho*/
+    transition: 10ms;       /*Provocamos una leve transición*/
+    z-index: 100;           /*Z-index para que se muestre por encima de los demás elementos*/
+    white-space: nowrap; /*Mantener el texto en una sola linea.*/
+    overflow: hidden; /*oculta el texto que excede del contenedor*/
+}
+
+.etiqueta:hover{            /*Hover en la etiqueta*/
+    filter: saturate(400%); /*Hacemos que se sature para que se note que estás sobre el*/
+    width: 18.3%;           /*Lo aumentamos de tamaño muy ligeramente*/
+    height: 7.3%;
+}
+
+div.etiqueta a {            /*Enlace de la etiqueta*/
+    text-decoration: none;  /*Quitamos los efectos que provoca el enlace*/
+    position: absolute;     /*Posición absoluta para trabajar con él*/
+    top: 34%;               /*Le damos posición*/
+    left: 27%;
+    color: #1cede7;
+    font-size: 0.8vw;       /*Un tamaño de fuente adaptable al tamaño del ancho de la pantalla*/
+    font-family: 'Zen Dots';    /*Le damos un tipo de letra*/
+}
+
+.logo {                     /*Logo de la etiqueta*/
+    position: absolute;     
+    margin-top: 4%;         /*Usamos margin para colocarlo a nuestro gusto*/
+    margin-left: 3%;
+    float: left;            /*Float left para que aparezca en la izquierda*/
+    color: #1cede7;
+    border: double 5px #1cede7; /*Borde doble para que sea un borde de dos líneas*/
+    font:1vw 'Zen Dots';
+    border-top-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+}
+
+.textoetiqueta {            /*Texto de la etiqueta*/
+    position: absolute;
+    top: 31%;
+    left: 27%;
+    color: #1cede7;
+    font: 1vw 'Zen Dots';
+}
+
+/*ANCLA DE VUELTA AL PRINCIPIO DE CADA PÁGINA*/        
+.alppo {  /*alppo=al principio*/                /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS*******************/
+    position: fixed; /*Mantiene su posición fija pese a hacer scroll*/
+    right: 3%;       /*Lo colocamos en una posición visible pero que no cause molestia alguna*/
+    top: 90%;
+    padding: 0.5%;   /*Le damos un padding leve*/
+    background-color: transparent;     /*Color transparente para que este integrado a cada página*/
+    border-radius: 12px;            /*Redondeamos los bordes*/
+    color: rgb(5, 39, 38);
+    border: solid 3px #1cede7;
+    transition: 10ms;               /*Añadimos una leve transición para que no sea demasiado brusco*/
+    z-index: 101;                   /*Z-index con un valor alto para que se vea por encima de cualquier otro elemento*/
+}
+
+.alppo:hover{               /*Hover sobre la flecha para volver al principio de cada página*/
+    filter: saturate(400%); /*Hacemos que se sature para que se note que estás sobre él*/
+}
+
+#subir {                    /*Punto de anclaje al principio de la página*/
+    position: absolute;     /*Creamos el ancla al que se irá tras pulsar la flecha, nos llevará a la parte superior de la página con top y left en 0%*/
+    top: 0px;
+    left: 0px;
+}
+
+/*ELECCION DE PESTAÑA*/                           /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS*******************/
+.pag {/*MENU TOP DE LA PAGINA*/
+    position:sticky;    /*Utilizamos posición sticky para que se quede "pegado" y siempre se mantenga en su posición aunque hagas scroll*/
+    top: 3.3%;          /*Damos la posición deseada*/
+    height: 10%;        /*Tendrá una altura del 10% de la página*/
+    background-color: whitesmoke;   /*Damos un color de fondo*/
+    width: 100%;        /*Ocupará todo el ancho de la página*/
+    display: flex;      /*Display flex para que sea flexible*/
+    align-items: center;    /*Propiedad de alineación vertical*/
+    justify-content: center;    /*Propiedad de alineación horizontal*/
+    z-index: 20;            /*Z-indez para que no se le superpongan otros elementos de la página*/
+}
+
+.menu_pag {
+    width: 100%;    /*Ancho de toda la página*/
+    display: flex;  /*Display flex para que sea flexible*/
+    align-items: center;        /*Propiedad de alineación vertical*/
+    justify-content: center;    /*Propiedad de alineación horizontal*/
+}
+
+.menu_pag li {
+   display: inline;     /*Display inline para que a pesar de ser una lista se alinee de forma horizontal*/
+   margin-left: 10%; /*Margin left para que se separan las opciones*/
+}
+
+.menu_pag :nth-child(1){
+    margin-left: 0%; /*Este hijo en concreto tiene que tener el margen izquierdo en 0, para que este centrado*/
+}
+
+.menu_pag li:hover{         /*Hover para que actue cuando tenga el foco*/
+    border-bottom:rgb(58, 63, 63) solid 0.2px;      /*Damos un borde inferior para que de aspecto de subrayado*/
+}
+
+.menu_pag li a {
+    text-decoration:none; /*Desactiva los estilos por defecto de los links*/
+    color: rgb(58, 63, 63);     /*Damos un color de letra gris*/
+}
+
+.menu_pag li a:hover {
+    text-decoration:none; /*Desactiva los estilos por defecto de los links*/
+}  
+
+.menu_pag div {         /*Selector sobre los div de cada texto*/
+    border-left: gray solid 0.3px;/*Damos un color a los bordes izquierdos de estos div, para que estén separados los apartados y sea más estético*/
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+.menu_pag div:nth-child(1){
+    border-left:transparent;    /*Le quitamos este borde izquierdo al primer elemento, para que no desentone del resto*/
+}
+
+
+/*REDES SOCIALES*/  
+
+.rrss {                 /*Damos la posición deseada al elemento que contiene las redes sociales de nuestra página*/
+    position: absolute;
+    left: 0%;
+    top: 8%;   
+    width:3%;
+    height: auto;       /*Altura automática para que sea adaptable*/
+    color: turquoise;
+}
+
+.rrss i{            /*Selector sobre los iconos de las rrss*/
+    margin: 20%;        /*Damos una separación entre los elementos con margin*/
+    font-size: 25px;    /*Le ponemos el tamaño deseado con font-size*/
+    transition: 0.4s;   /*Damos un tiempo a la transición*/
+}
+
+.rrss i:hover{          /*Hover sobre los iconos*/
+    color:rgb(4, 233, 157);         /*Añadimos un cambio de color, que se sature*/
+    filter: saturate(600%);
+    transform: rotateZ(360deg); /*Además, con una transformación hacemos que rote 360 grados*/
+}
+
+.enlaces {
+    color: turquoise;   /*Damos un color fijo para que siempre se mantenga y no se lleven a cabo los efectos de los enlaces*/
+}
+
+.enlaces2 {
+    color: white;       /*Damos un color fijo para que siempre se mantenga y no se lleven a cabo los efectos de los enlaces*/
+}
+
+.frase2 { /*fecha de 'presentación'*/
+    font-family:  'Zen Dots';       /*Ponemos un fuente*/
+    color:turquoise;
+    margin-left: 20%;       /*Lo separamos por la izquierda con un margin-left*/
+}
+
+
+/*PARTE DE ABAJO*/                   /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS*******************/
+
+.infoabajo {                /*Div que contendrá toda nuestra parte de abajo de la página con información*/
+    width: 100%;        /*Ancho de toda la página*/
+    height: 50%;        /*Una altura del 50%*/
+    background-color: rgb(236, 230, 230);       /*Damos un color que se diferencie levemente*/
+    display: flex;      /*Display flex para que sea flexible*/
+    justify-content: center;
+}
+
+.infoabajo div {
+    margin: 8%;             /*Usamos margin para separarlo de los demás elementos lo que nos sea necesario*/
+    margin-top: 8%;
+    color: rgb(87, 84, 84);
+}
+
+.infoabajo li {
+    list-style: none;       /*Quitamos los estilos que nos provocan las listas*/
+    padding-top: 3px;       /*Damos un padding del 3% por arriba para separarlo levemente*/
+}
+
+.infoabajo a {
+    text-decoration:none;   /*Quitamos los efectos que nos provocan los enlaces*/
+    color: rgb(87, 84, 84);
+}
+
+#tituloinfo {
+   color: black;        /*Damos un color y un tamaño a las fuentes título*/
+   font-size: 17px; 
+   font-weight: bold;       /*Ponemos los títulos en negrita para que resalte levemente*/
+}
+
+.subinfo {
+   background-color: gray;      /*Damos otro color para contrastar y que sea más estético*/
+   width: 100%;                 /*Determinamos el ancho y la altura*/
+   height: 15%;
+   color: white;
+   text-align: center;      /*Ponemos el texto en el centro*/
+   vertical-align: middle;  /*Alineamos el centro en vertical con vertical-align*/
+}
+
+.subinfo p {
+   padding-top: 3%;             /*Separamos levemente los textos de arriba con padding-top*/
+   color: white;
+}
+
+.infoabajo li a:hover {
+    text-decoration:none;       /*Omitimos los efectos de las listas*/
+    transition: 0.8s;           /*Una transición para que el efecto del hover no sea muy brusco*/
+    border-bottom:rgb(87, 84, 84) solid 0.2px;      /*Usamos el borde de abajo para dar efecto de subrayado*/
+}
+
+/*CONTENIDO: NOTICIAS*/
+.contenedornoticia {
+    display: block;  /*Usamos display block para bloquear los elementos*/
+    z-index: 2;     /*Un z-indez para superponerlo a otros elementos*/
+}
+
+.noticia {
+   width:100%;      /*Ancho de toda la página*/
+   border: 2px solid transparent; /*Es necesario para el borde degradado*/
+   border-image: linear-gradient(to right, white 0%, #1cede7 5%, white 60%) 1; /*degradado del borde*/
+   border-left: transparent;
+   border-right: transparent;
+   display: inline-block; /*Usamos display inline-block para situar los elementos correctamente*/
+   margin-top: 2%;
+   overflow: hidden; /*oculta el texto que excede del contenedor*/
+}
+
+.noticia:nth-last-child(1){ /*para dar margen por abajo al ultimo hijo noticia */
+   margin-bottom: 2%;
+}
+
+.txtnoticia{
+    width: 50%;
+    height:fit-content; /*para que se ajuste el div al contenido*/
+    padding: 5%;
+    float: left;
+}
+
+.noticia img{
+    width: 45%;
+    height:auto;        /*Altura automática*/
+    float: right;
+}
+
+iframe { /*para que el reproductor se vaya a la derecha*/
+   float: right;
+}
+
+.noticia:hover{
+    transition: 1s;
+    filter: saturate(300%);
+    background-color: rgb(204, 204, 204);
+}
+
+.noticia:hover img{ /*para la imagen cuando se hace hover en la noticia*/
+   transform: scale(1.1);       /*Aumentamos la escala de la imagen para dar un efecto estético al tener el foco con hover*/
+   transition: 1s;
+}
+
+.titulonoticia {
+   color:rgb(5, 39, 38);
+   font: 3vw 'Zen Dots', cursive;
+   margin-bottom: 8%;
+}
+
+.cuerponoticia {
+   height: 90%;
+   font-weight: lighter;
+   color: rgb(94, 91, 91);
+}

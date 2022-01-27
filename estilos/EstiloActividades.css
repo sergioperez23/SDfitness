@@ -1,0 +1,290 @@
+* {                         /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+    padding: 0mm; /*inicializamos el padding de todos los elementos a 0*/
+    margin: 0mm; /*inicializamos el margin de todos los elementoss a 0*/
+    box-sizing: border-box; /*el tamaño que se de a las cajas va a incluir el borde*/
+    font-family: Arial, Helvetica, sans-serif; /*una fuente manejable y compatible con todos los navegadores*/
+}
+body {
+    background-color: rgba(3, 24, 29, 0.884);       /*Color de fondo para toda la página en el body*/
+}
+
+.top {/*MENU TOP DE LA PAGINA*/       /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+    position:sticky;
+    top: 0%;
+    width: 100%;
+    height: 24px;
+    background-color: black;
+    padding-right: 7%;
+    padding-top: 2px;
+    padding-bottom: 0.2%;      
+    font-size: 15px;    
+    z-index: 100; 
+}    
+
+.menu_top li {
+   display: inline;
+   float:right;
+   margin-right: 2%;         
+   text-align: center;
+   border-bottom: transparent;
+  
+   
+}
+
+.menu_top li a {
+    
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+    color: white;
+}
+
+.menu_top li a:hover { 
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+    color:rgb(28, 237, 231);
+    transition: 0.4s;
+    border-bottom:rgb(28, 237, 231) solid 0.2px;
+}
+
+.fotocab { /*FOTO DE LA CABECERA*/             
+    width: 100%;
+    height: 30%;
+    background-image: url(../imagenes/img_actividades/cab_actividades.jpg); /*Enlace de la foto*/
+    background-repeat: no-repeat; /*La imagen no se repite*/
+    background-size: 100%; /*Que ocupe el 100%*/
+    background-attachment:initial; /*La imagen va a ocupar el div siempre*/
+    background-position: center; /*Se centra la imagen*/
+    display: flex;
+    align-items: center; /*Propiedad de alineación vertical*/
+    justify-content: center; /*Propiedad de alineación horizontal*/
+}
+
+/*ELECCION DE PESTAÑA*/
+.pag {/*MENU TOP DE LA PAGINA*/      /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+    position:sticky;
+    top: 3.3%;
+    height: 10%;
+    background-color: whitesmoke;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.menu_pag {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_pag li {
+   display: inline;
+   margin-left: 10%; /*se separan las opciones*/
+}
+
+.menu_pag :nth-child(1){
+    margin-left: 0%; /* para q este centrado, este hijo en concreto tiene que tener el margen izquierdo en 0*/
+}
+
+.menu_pag li:hover{
+    border-bottom:rgb(58, 63, 63) solid 0.2px;
+}
+
+.menu_pag li a {
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+    color: rgb(58, 63, 63);
+}
+
+.menu_pag li a:hover {
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+}  
+
+.menu_pag div {
+    border-left: gray solid 0.3px;
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+.menu_pag div:nth-child(1){
+    border-left:transparent;
+}
+
+/*ANCLA DE VUELTA AL PRINCIPIO*/
+.alppo {  /*alppo=al principio*/     /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+    position: fixed; /*Mantiene su posición fija pese a hacer scroll*/
+    right: 3%;
+    top: 90%;
+    padding: 0.5%;
+    background-color: transparent;
+    border-radius: 12px;
+    color: rgb(85, 84, 84);
+    border: solid 3px #1cede7;
+    transition: 10ms;
+}
+
+.alppo:hover{
+    filter: saturate(400%);
+}
+
+#subir {                    /*Punto de anclaje al principio de la página*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/*ELECCION DE ACTIVIDAD DINÁMICA*/
+.actividades{   
+    display: flex;
+    color: white;
+    height: 50%;
+    white-space: nowrap; /*Mantener el texto en una sola linea, aqui se utiliza para que cuando se haga hover  los textos mas largos no se
+    ajusten en lineas diferentes.*/
+}
+
+.seccion{
+    flex:1;                         /*Es el espacio de cada elemento de la seccion. Sirve para decir qué todos van a ocupar 1 porción.*/
+    font: 2vw 'Zen Dots', cursive;  /*Tamaño de fuente adaptable con vw y un tipo concreto*/
+    display: flex;              /*Para qué los elementos de esta sección se ajusten*/
+    align-items: center;        /*Alineamos los elementos en el centro*/
+    transition: 0.4s;           /*Un pequeño tiempo de transición para que ocurra de una forma visual*/
+    margin: 0.1%;               /*Un leve margin*/
+}
+
+.seccion:hover{
+    flex-grow: 8;    /*Al hacer hover sobre cada sección, va a crecer relativamente hasta el valor 8. El valor flex de cada sección es 1, justo el estilo de encima*/
+}
+
+.seccion:hover .titulo{     /*Hover para que actue al tener el foco*/
+    transform: rotateZ(0deg);   /*Para que al hacer hover, las letras roten de 90 grados a 0 para que estén en horizontal.*/  
+    margin-top: 30%;        /*Margin por arriba para separarlo*/
+}
+
+.seccion:nth-child(1){  /*Usamos nth-child para facilitar que cada parte de .seccion tenga una imagen distinta*/
+    background-image:url(../imagenes/img_actividades/sala.jpg); /*Ruta de la imagen*/
+    background-repeat: no-repeat; /*la imagen no se repite*/
+    background-size:cover;        /*La imagen va a cubrir todo el contenedor div al que corresponda*/
+    background-position: center; /*se centra la imagen*/
+    display: flex;
+}
+.seccion:nth-child(2){
+    background-image:url(../imagenes/img_actividades/piscina.jpg);
+    background-repeat: no-repeat; /*la imagen no se repite*/
+    background-size:cover;
+    background-position: center; /*se centra la imagen*/
+    display: flex;
+}
+.seccion:nth-child(3){
+    background-image:url(../imagenes/img_actividades/padel.jpg);
+    background-repeat: no-repeat; /*la imagen no se repite*/
+    background-size:cover;
+    background-position: center; /*se centra la imagen*/
+    display: flex;
+}
+.seccion:nth-child(4){
+    background-image:url(../imagenes/img_actividades/outdoor.jpg);
+    background-repeat: no-repeat; /*la imagen no se repite*/
+    background-size:cover;
+    background-position: center; /*se centra la imagen*/
+    display: flex;
+}
+.seccion:nth-child(5){
+    background-image:url(../imagenes/img_actividades/spa.jpg);
+    background-repeat: no-repeat; /*la imagen no se repite*/
+    background-size:cover;
+    background-position: center; /*se centra la imagen*/
+    display: flex;
+}
+
+.titulo{        
+    transform: rotateZ(-90deg);     /*Hacemos que rote -90 grados y se coloque en horizontal y se lea cómodamente*/
+    margin: auto;       /*Margin automático para que se adapte según sea necesario*/
+    transition: 0.4s;   /*Añadimos un tiempo de transición*/
+    font: 1.75vw 'Zen Dots', cursive;
+    color: white;
+    text-shadow: -1px -1px black,       /*Damos un borde al texto jugando con text-shadow para que resalten más sobre la foto de fondo*/
+                1px -1px black,
+                -1px 1px black,
+                1px 1px black;
+}
+
+#tema {                         
+   border: 2px solid transparent;       /*Ponemos los bordes transparentes para luego usar linear-gradient*/
+   border-top: transparent; 
+   border-left: transparent;
+   border-right: transparent;
+   color: rgb(223, 217, 217);
+            /*Usamos linear-gradient para dofuminar la línea de izquierda a derecha, dando los colores y porcentajes que queremos que tenga*/
+   border-image: linear-gradient(to right, rgba(3, 24, 29, 0.884) 0%, #1cede7 10%, #1cede7 20%, rgba(3, 24, 29, 0.884) 30%) 1;  
+   font: 1.7vw 'Zen Dots';
+   margin-top: 3%;
+}
+
+#pregunta{
+   margin:1%;
+   margin-left: 6%;
+   letter-spacing: 0.1vw;   /*Que haya un leve espacio entre las letras y sea adaptable al ancho de la pantalla*/
+   font-weight: bolder;     /*Usamos font-weight para que la letra aparezca en negrita*/
+   color: rgb(211, 202, 202);
+}
+
+#respuesta{
+   margin-left: 9%;
+   margin-bottom: 3%;
+   color: rgba(255, 255, 255, 0.322);
+}
+
+/*PARTE DE ABAJO*/                /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+
+.infoabajo {
+    width: 100%;
+    height: 50%;
+    background-color: rgb(236, 230, 230);
+    display: flex;
+    justify-content: center;
+}
+
+.infoabajo div {
+    margin:8%;
+    margin-top: 8%;
+    color: rgb(87, 84, 84);
+}
+
+.infoabajo li {
+    list-style: none;
+    padding-top: 3px;
+}
+
+.infoabajo a {
+    text-decoration:none;
+    color: rgb(87, 84, 84);
+}
+
+#tituloinfo {
+   color: black;
+   font-size: 17px;
+   font-weight: bold;
+}
+
+.subinfo {
+   background-color: gray;
+   width: 100%;
+   height: 15%;
+   color: white;
+   text-align: center;
+   vertical-align: middle;
+}
+
+.subinfo p {
+   padding-top: 3%;
+   color: white;
+}
+
+.infoabajo li a:hover {
+    text-decoration:none;
+    transition: 0.8s;
+    border-bottom:rgb(87, 84, 84) solid 0.2px;
+}
+
+.enlaces2 {
+    color: white;
+}

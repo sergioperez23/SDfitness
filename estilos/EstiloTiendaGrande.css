@@ -1,0 +1,355 @@
+* {             /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+    padding: 0mm; /*inicializamos el padding de todos los elementos a 0*/       
+    margin: 0mm; /*inicializamos el margin de todos los elementoss a 0*/
+    box-sizing: border-box; /*el tamaño que se de a las cajas va a incluir el borde*/
+    font-family: Arial, Helvetica, sans-serif; /*una fuente manejable y compatible con todos los navegadores*/
+}
+
+.top {/*MENU TOP DE LA PAGINA*/     /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+    position:sticky;
+    top: 0%;
+    width: 100%;
+    height: 24px;
+    background-color: black;
+    padding-right: 7%;
+    padding-top: 2px;
+    padding-bottom: 0.2%;      
+    font-size: 15px;   
+    z-index: 20;  
+}    
+
+.menu_top li {
+   display: inline;
+   float:right;
+   margin-right: 2%;         
+   text-align: center;
+   border-bottom: transparent;
+}
+
+.menu_top li a {
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+    color: white;
+}
+
+.menu_top li a:hover {           
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+    color:rgb(28, 237, 231);
+    transition: 0.4s;
+    border-bottom:rgb(28, 237, 231) solid 0.2px;
+}
+
+.fotocab { /*PARTE 2 animacion parte principal*/         
+    width: 100%;
+    height: 50%;
+    background-image: url(../imagenes/img_tienda/cabecera_tienda.jpg);
+    background-repeat: no-repeat; /*la imagen no se repite*/
+    background-size: 100%; 
+    background-attachment:initial; /*la imagen va a ocupar el div siempre*/
+    background-position: center; /*se centra la imagen*/
+    display: flex;
+    align-items: center; /*propiedad de alineación vertical*/
+    justify-content: center; /*propiedad de alineación horizontal*/
+}
+
+/*ELECCION DE PESTAÑA*/
+.pag {/*MENU TOP DE LA PAGINA*/     /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+    position:sticky;
+    top: 3.3%;
+    height: 10%;
+    background-color: whitesmoke;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;  
+}  
+
+.menu_pag {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.menu_pag li {
+   display: inline;
+   margin-left: 10%; /*se separan las opciones*/
+}
+
+.menu_pag :nth-child(1){
+    margin-left: 0%; /* para q este centrado, este hijo en concreto tiene que tener el margen izquierdo en 0*/
+}
+
+.menu_pag li:hover{
+    border-bottom:rgb(58, 63, 63) solid 0.2px;
+}
+
+
+.menu_pag li a {
+    
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+    color: rgb(58, 63, 63);
+}
+
+.menu_pag li a:hover {
+    
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+}  
+
+.menu_pag div {
+    border-left: gray solid 0.3px;
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+.menu_pag div:nth-child(1){
+    border-left:transparent;
+}
+
+ /*ANCLA DE VUELTA AL PRINCIPIO*/   /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+ .alppo {  /*alppo=al principio*/
+    position: fixed; /*Mantiene su posición fija pese a hacer scroll*/
+    right: 3%;
+    top: 90%;
+    padding: 0.5%;
+    background-color: transparent;
+    border-radius: 12px;
+    color: rgb(5, 39, 38);
+    border: solid 3px #1cede7;
+    transition: 10ms;
+}
+
+.alppo:hover{
+    filter: saturate(400%);
+}
+
+#subir {                    /*Punto de anclaje al principio de la página*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+ /*PARTE DE ABAJO*/         /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+
+.infoabajo {
+    width: 100%;
+    height: 50%;
+    background-color: rgb(236, 230, 230);
+    display: flex;
+    justify-content: center;
+}
+
+.infoabajo div {
+    margin:8%;
+    margin-top: 8%;
+    color: rgb(87, 84, 84);
+}
+
+.infoabajo li {
+    list-style: none;
+    padding-top: 3px;
+}
+
+.infoabajo a {
+    text-decoration:none;
+    color: rgb(87, 84, 84);
+}
+
+#tituloinfo {
+   color: black;
+   font-size: 17px;
+   font-weight: bold;
+}
+
+.subinfo {
+   background-color: gray;
+   width: 100%;
+   height: 15%;
+   color: white;
+   text-align: center;
+   vertical-align: middle;
+}
+
+.subinfo p {
+   padding-top: 3%;
+   color: white;
+}
+
+.infoabajo li a:hover {
+    text-decoration:none;
+    transition: 0.8s;
+    border-bottom:rgb(87, 84, 84) solid 0.2px;
+}
+
+.enlaces2 {
+    color: white;
+}
+
+/*ARTÍCULOS*/           
+
+.foto1 {        /*Creamos una clase para cada foto*/
+   position: relative;      /*Tendrán posición relativa para facilitar su manejo*/
+   background-image: url(../imagenes/img_tienda/power1.PNG);    /*Ruta de la foto de cada producto*/
+   background-position-x: center;
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100%;
+   border: solid grey 1px;
+   margin-bottom: 2%;
+}
+
+.foto1:hover, .foto2:hover, .foto3:hover, .foto4:hover, .foto5:hover, .foto6:hover, .foto7:hover, .foto8:hover {
+    filter: opacity(0.9);       /*Cuando tengan el foco se desaturan levemente y toda la caja tendrá una sombra*/
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+                      0.3em 0.3em 1em rgba(0, 0, 0, 3);
+}
+
+.foto2 {                                            /*Todas las fotos tendrán la misma estructura*/
+   position: relative;
+   background-image: url(../imagenes/img_tienda/power2.PNG);
+   background-position-x: center;
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100%;
+   border: solid grey 1px;
+   margin-bottom: 2%;
+}
+
+.foto3 {
+   position: relative;
+   background-image: url(../imagenes/img_tienda/power3.PNG);
+   background-position-x: center;
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100%;
+   border: solid grey 1px;
+   margin-bottom: 2%;
+}
+
+.foto4 {
+   position: relative;
+   background-image: url(../imagenes/img_tienda/power4.PNG);
+   background-position-x: center;
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100%;
+   border: solid grey 1px;
+   margin-bottom: 2%;
+}
+
+.foto5 {
+   background-image: url(../imagenes/img_tienda/bandaselasticas.PNG);
+   background-position-x: center;
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100%;
+   border: solid grey 1px;
+   margin-bottom: 2%;
+}
+
+.foto6 {
+   background-image: url(../imagenes/img_tienda/bosu.jpg);
+   background-position-x: center;
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100%;
+   border: solid grey 1px;
+   margin-bottom: 2%;
+}
+
+.foto7 {
+   background-image: url(../imagenes/img_tienda/cuerdaspower.PNG);
+   background-position-x: center;
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100%;
+   border: solid grey 1px;
+   margin-bottom: 2%;
+}
+
+.foto8 {
+   background-image: url(../imagenes/img_tienda/lastres.PNG);
+   background-position-x: center;
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100%;
+   border: solid grey 1px;
+   margin-bottom: 2%;
+}
+
+.productos p {          /*Párrafos de los productos*/
+    font: 1.5vw 'Zen Dots';
+    text-align: center;
+}
+
+.productos p a {        /*Enlaces a amazon de cada producto*/
+    font: 1.5vw 'Zen Dots', cursive;
+    color: white;
+    border: rgb(105, 101, 101) solid 1px;
+    border-radius: 25px;
+    background-color: rgb(182, 175, 175);
+    text-align: center;     /*Lo alineamos al centro y quitamos los efectos por ser enlaces con text-decoration none*/
+    text-decoration:none;
+}
+
+.productos p a:hover {      /*Hover para cuando tengan el foco*/
+    border: rgb(53, 51, 51) solid 1px;
+    background-color: rgb(163, 156, 156);
+    color: rgb(228, 227, 227);
+}
+
+@media screen and (min-width: 667px) {  /*Usamos media querys, en este caso que ocurra lo que indicamos en los estilos cuando el ancho sea mayor de 667px*/
+    .productos {
+        display: grid;           /*Usaremos grid trabajando con áreas*/
+                                 /*Al utilizar áreas el procedimiento es el siguiente: utilizamos grid-template-areas, abrimos distintas líneas 
+                                 entrecomilladas que representan las filas, y damos las columnas utilizando el nombre que queramos, para que las
+                                 áreas sean iguales ponemos el mismo nombre y así luego trabajamos con el nombre del área y damos las características
+                                 que queramos*/
+        grid-template-areas:"area1 area2 area3 area4"         
+                            "area5 area6 area7 area8";
+        width: 100%;
+        height: 100%;
+        margin-bottom: 10%;
+    }
+
+    .a1 {                         /*Usamos el selector del area que queremos, para cada foto será fotox = ax*/
+        grid-area: area1;               /*Con grid-area seleccionamos el nombre del área al que queremos aplicar los cambios*/
+        margin: 10%;
+    }
+
+    .a2 {
+        grid-area: area2;
+        margin: 10%;
+    }
+
+    .a3 {
+        grid-area: area3;
+        margin: 10%;
+    }
+
+    .a4 {
+        grid-area: area4;
+        margin: 10%;
+    }
+
+    .a5 {
+        grid-area: area5;
+        margin: 10%;
+    }
+
+    .a6 {
+        grid-area: area6;
+        margin: 10%;
+    }
+
+    .a7 {
+        grid-area: area7;
+        margin: 10%;
+    }
+
+    .a8 {
+        grid-area: area8;
+        margin: 10%;
+    }
+}

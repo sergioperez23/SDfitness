@@ -1,0 +1,396 @@
+* {                       /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+    padding: 0mm; /*inicializamos el padding de todos los elementos a 0*/
+    margin: 0mm; /*inicializamos el margin de todos los elementoss a 0*/
+    box-sizing: border-box; /*el tamaño que se de a las cajas va a incluir el borde*/
+    font-family: Arial, Helvetica, sans-serif; /*una fuente manejable y compatible con todos los navegadores*/
+}
+
+body {
+    overflow-x: hidden;     /*Usamos overflow-x hidden para que no pueda haber scroll en horizontal, es necesario por unos elementos que luego se explican*/
+    background-color: rgba(3, 24, 29, 0.884);
+}
+
+.top {/*MENU TOP DE LA PAGINA*/    /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+    position:sticky;
+    top: 0%;
+    width: 100%;
+    height: 24px;
+    background-color: black;
+    padding-right: 7%;
+    padding-top: 2px;    
+    font-size: 15px;  
+    z-index: 100;   
+}    
+
+.menu_top li {
+   display: inline;
+   float:right;
+   margin-right: 2%;         
+   text-align: center;
+   border-bottom: transparent;
+}
+
+.menu_top li a {
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+    color: white;
+}
+
+.menu_top li a:hover {
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+    color:rgb(28, 237, 231);
+    transition: 0.4s;
+    border-bottom:rgb(28, 237, 231) solid 0.2px;
+}
+
+.fotocab { /*PARTE 2 animacion parte principal*/         
+    width: 100%;
+    height: 50%;
+    background-image: url(../imagenes/Clasesyhorarios/cab_cyh.jpg);
+    background-repeat: no-repeat; /*la imagen no se repite*/
+    background-size: 100%; 
+    background-attachment:initial; /*la imagen va a ocupar el div siempre*/
+    background-position: center; /*se centra la imagen*/
+    display: flex;
+    align-items: center; /*propiedad de alineación vertical*/
+    justify-content: center; /*propiedad de alineación horizontal*/
+}
+
+/*ELECCION DE PESTAÑA*/       /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+.pag {/*MENU TOP DE LA PAGINA*/
+    position:sticky;
+    top: 3.3%;
+    height: 10%;
+    background-color: whitesmoke;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.menu_pag {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_pag li {
+   display: inline;
+   margin-left: 10%; /*se separan las opciones*/
+}
+
+.menu_pag :nth-child(1){
+    margin-left: 0%; /* para q este centrado, este hijo en concreto tiene que tener el margen izquierdo en 0*/
+}
+
+.menu_pag li:hover{
+    border-bottom:rgb(58, 63, 63) solid 0.2px;
+}
+
+.menu_pag li a {
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+    color: rgb(58, 63, 63);
+}
+
+.menu_pag li a:hover {
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+}  
+
+.menu_pag div {
+    border-left: gray solid 0.3px;
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+.menu_pag div:nth-child(1){
+    border-left:transparent;
+}
+
+ /*ANCLA DE VUELTA AL PRINCIPIO*/     /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+ .alppo {  /*alppo=al principio*/
+    position: fixed; /*Mantiene su posición fija pese a hacer scroll*/
+    right: 3%;
+    top: 90%;
+    padding: 0.5%;
+    background-color: transparent;
+    border-radius: 12px;
+    color: rgb(85, 84, 84);
+    border: solid 3px #1cede7;
+    transition: 10ms;
+    z-index: 20;
+}
+.alppo:hover{
+    filter: saturate(400%);
+}
+
+#subir {                    /*Punto de anclaje al principio de la página*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/*TABLA DE LAS CLASES*/
+.tablahorario{
+    border-collapse: collapse; /*Sirve para fusionar los bordes*/
+    text-align: center;     /*Hacemos que el texto se alinee al centro*/
+    font: 1.5vh "Antonio";  /*Damos un tamaño adaptable y una fuente concreta*/
+}
+
+.tablahorario td, th {  /*Sirve sobre los th y td de la tabla*/
+    border: 1px solid;  /*Damos a los bordes tamaño, que sean sólidos y un color*/
+    border-color: turquoise;
+    background-color: rgb(40, 47, 49);  /*FOndo altura y ancho determinados*/
+    width: 105px;
+    height: 40px;
+}
+
+#dias {     /*Sobre las celdas de los días y las horas unos colores diferentes*/
+    background-color: rgb(2, 44, 54);
+    border-color: turquoise;
+    color: white;
+}
+
+#hora {
+    background-color: rgb(2, 44, 54);
+    color: white;
+    border-color: turquoise;
+}
+
+#sinbordes {            /*Sobre la celda superior izquierda actuamos para que "no exista", cambiando bordes y colores*/
+    border-top: none;
+    border-left: none;
+    border-bottom-color: turquoise;
+    border-right-color: turquoise;
+    background-color: rgba(3, 24, 29, 0);
+}
+
+#zumbatabla{    /*Damos a cada clase distinta un color diferenciador*/
+    color: orange;
+}
+
+#zumbatabla:hover {     /*Cada vez que una clase tenga el foco se aplicarán unos efectos*/
+    background-color: orange;       /*El color de fondo y de la letras se invierten, además la letra se vuelve negrita para que se vea bien*/
+    color: rgb(32, 38, 39);
+    font-weight: bolder;
+    transition-property: color, background-color, font-weight;  /*Transition-property para indicar en que propiedades se dará la transición*/
+    transition-duration: 1s;    /*Una duración de un segundo para que sea visual*/
+    transition-delay: 0.3;      /*Un pequeño delay para que no sea un cambio violento*/
+}
+                                                /*Todas las clases son igual pero cada una con un color distinto*/
+#boxeotabla {
+    color:greenyellow
+}
+
+#boxeotabla:hover {
+    background-color: greenyellow;
+    color: rgb(32, 38, 39);
+    font-weight: bolder;
+    transition-property: color, background-color, font-weight;
+    transition-duration: 1s;
+    transition-delay: 0.3;
+}
+
+#spinningtabla {
+    color:turquoise
+}
+
+#spinningtabla:hover {
+    background-color: turquoise;
+    color: rgb(32, 38, 39);
+    font-weight: bolder;
+    transition-property: color, background-color, font-weight;
+    transition-duration: 1s;
+    transition-delay: 0.3;
+}
+
+#yogatabla {
+    color: violet;
+}
+
+#yogatabla:hover {
+    background-color: violet;
+    color: rgb(32, 38, 39);
+    font-weight: bolder;
+    transition-property: color, background-color, font-weight;
+    transition-duration: 1s;
+    transition-delay: 0.3;
+}
+
+#hiittabla {
+    color: red;
+}
+
+#hiittabla:hover {
+    background-color: red;
+    color: rgb(32, 38, 39);
+    font-weight: bolder;
+    transition-property: color, background-color, font-weight;
+    transition-duration: 1s;
+    transition-delay: 0.3;
+}
+
+#titulo {                   /*Letra de los textos que actuan como titulo*/
+    font-size: 47px;        /*Tamaño de letra grande*/
+    color: rgb(221, 209, 209);
+    font-family: 'Antonio', sans-serif;
+    text-align: center;         /*Alineado al centro*/
+    padding-bottom: 10px;       /*Un padding para separar elementos que estén abajo*/
+    border-top: solid 1px rgb(221, 209, 209);   /*Bordes arriba y abajo para darle un mejor aspecto*/
+    border-bottom: solid 1px rgb(221, 209, 209);
+}
+
+.actividades {  /*Todas las actividades tendrán un ancho mayor del 100%, para poder esconder la parte que explica cada una y darle un hover estético*/
+    width: 120%;
+}
+
+.imagenact {
+    height: 350px;          /*Damos unas características comunes a todas las imágenes*/
+    transition: 0.5s;       /*Tiempo de transición y un margin pequeño con el elemento de arriba*/
+    margin-top: 0.25%;
+}
+
+.imagenact:nth-child(2n+1) {    /*Para los impares, que se sitúen al 20% de la pantalla por la izquierda*/
+    padding-left: -20%;
+}
+
+.imagenact:nth-child(2n) {      /*Para los pares será al contrario, un 20% por la derecha*/
+    padding-left: 20%;
+}
+
+.imagenact:nth-child(2n+1):hover {      /*Cuando tengan el foco se transladarán los impares a la derecha y los pares a la derecha,
+                                        dejando hueco al texto explicativo de cada actividad*/
+    transform: translateX(20%);
+    transition: 0.5s;
+}
+
+.imagenact:nth-child(2n):hover {
+    transform: translateX(-36.7%);
+    transition: 0.5s;
+}
+
+.imagenact:nth-child(1) {   /*Nth-child para facilitar las imágenes de cada elemento*/
+    background-image:url(../imagenes/Clasesyhorarios/Boxeo.jpg);    /*Ruta de la imagen*/
+    background-repeat: no-repeat;   /*Que solo salga una vez*/
+    background-size: 100%;  /*Que ocupe el 100%*/
+    background-position: center;    /*Que se posicione en el centro*/
+}
+
+.imagenact:nth-child(2) {
+    background-image:url(../imagenes/Clasesyhorarios/Yoga.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: 25%;
+}
+
+.imagenact:nth-child(3) {
+    background-image:url(../imagenes/Clasesyhorarios/Spinning.jpg);
+    background-repeat: no-repeat; 
+    background-size: 100%;
+    background-position-y: 15%;
+}
+
+.imagenact:nth-child(4) {
+    background-image:url(../imagenes/Clasesyhorarios/HIIT.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: 50%;
+}
+
+.imagenact:nth-child(5) {
+    background-image:url(../imagenes/Clasesyhorarios/Zumba.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: 10%;
+}
+
+.textoizq {     /*Selector para los textos que salen por la izquierda*/
+    position: absolute; /*Posición absoluta para trabajar su posición*/
+    left: -20%; /*Qué estén un 20% fuera de la pantalla por el lado izquierdo*/
+    width: 20%;
+    height: 100%;   /*Que ocupe todo el alto*/
+    background-color: rgb(221, 209, 209);
+}
+
+.textoder {     /*Selector para los textos que salen por la derecha*/
+    position: absolute;
+    right: -20%; /*Qué estén un 20% fuera de la pantalla por el lado derecho*/
+    width: 20%;
+    height: 100%;
+    background-color: rgb(221, 209, 209);
+}
+
+p.nombre {      /*Nombre de la actividad*/
+    float: left;    
+    color: rgb(54, 51, 51);
+    font-size: 50px;        /*Mayor tamaño de letra*/
+    font-weight: bolder;    /*Negrita*/
+    font-family: 'Antonio', sans-serif;
+    border-bottom: solid 2px black;     /*Subrayado con el borde de abajo*/
+    margin: 5%;             /*Margins para colocarlo*/
+    margin-top: 1%;
+}
+
+.info {     /*Texto de la información de cada clase*/
+    float: left;
+    margin: 2%;
+    margin-left: 5%;
+    color: rgb(95, 93, 93);
+}
+
+
+/*PARTE DE ABAJO*/      /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+
+.infoabajo {
+    width: 100%;
+    height: 50%;
+    background-color: rgb(236, 230, 230);
+    display: flex;
+    justify-content: center;
+}
+
+.infoabajo div {
+    margin:8%;
+    margin-top: 8%;
+    color: rgb(87, 84, 84);
+}
+
+.infoabajo li {
+    list-style: none;
+    padding-top: 3px;
+}
+
+.infoabajo a {
+    text-decoration:none;
+    color: rgb(87, 84, 84);
+}
+
+#tituloinfo {
+   color: black;
+   font-size: 17px;
+   font-weight: bold;
+}
+
+.subinfo {
+   background-color: gray;
+   width: 100%;
+   height: 15%;
+   color: white;
+   text-align: center;
+   vertical-align: middle;
+}
+
+.subinfo p {
+   padding-top: 3%;
+   color: white;
+}
+
+.infoabajo li a:hover {
+    text-decoration:none;
+    transition: 0.8s;
+    border-bottom:rgb(87, 84, 84) solid 0.2px;
+}
+
+.enlaces2 {
+    color: white;
+}

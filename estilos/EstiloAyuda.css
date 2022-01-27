@@ -1,0 +1,196 @@
+* {         /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+    padding: 0mm; /*inicializamos el padding de todos los elementos a 0*/
+    margin: 0mm; /*inicializamos el margin de todos los elementoss a 0*/
+    box-sizing: border-box; /*el tamaño que se de a las cajas va a incluir el borde*/
+    font-family: Arial, Helvetica, sans-serif; /*una fuente manejable y compatible con todos los navegadores*/
+}
+
+body{
+    background-color:whitesmoke;
+}
+
+/*MENU TOP DE LA PAGINA*/       /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+.top {
+    position:sticky;
+    top: 0%;
+    width: 100%;
+    height: 24px;
+    background-color: black;
+    padding-right: 7%;
+    padding-top: 2px;
+    padding-bottom: 0.2%;      
+    font-size: 15px;     
+}    
+
+.menu_top li {
+   display: inline;
+   float:right;
+   margin-right: 2%;         
+   text-align: center;
+   border-bottom: transparent;
+}
+
+.menu_top li a { 
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+    color: white;
+}
+
+.menu_top li a:hover {
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+    color:rgb(28, 237, 231);
+    transition: 0.4s;
+    border-bottom:rgb(28, 237, 231) solid 0.2px;
+}
+
+/*ELECCION DE PESTAÑA*/     /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+.pag {/*MENU TOP DE LA PAGINA*/
+    position:sticky;
+    top: 3.3%;
+    height: 10%;
+    background-color: whitesmoke;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}  
+
+.menu_pag {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_pag li {
+   display: inline;
+   margin-left: 10%; /*se separan las opciones*/
+}
+
+.menu_pag :nth-child(1){
+    margin-left: 0%; /* para q este centrado, este hijo en concreto tiene que tener el margen izquierdo en 0*/
+}
+
+.menu_pag li:hover{
+    border-bottom:rgb(58, 63, 63) solid 0.2px;
+}
+
+
+.menu_pag li a {
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+    color: rgb(58, 63, 63);
+}
+
+.menu_pag li a:hover {
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+}  
+
+.menu_pag div {
+    border-left: gray solid 0.3px;
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+.menu_pag div:nth-child(1){
+    border-left:transparent;
+}
+
+/*ANCLA DE VUELTA AL PRINCIPIO*/    /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+
+.alppo {  /*alppo=al principio*/
+    position: fixed; /*Mantiene su posición fija pese a hacer scroll*/
+    right: 3%;
+    top: 90%;
+    padding: 0.5%;
+    background-color: transparent;
+    border-radius: 12px;
+    color: rgb(5, 39, 38);
+    border: solid 3px #1cede7;
+    transition: 10ms;
+}
+
+.alppo:hover{
+    filter: saturate(400%);
+}
+
+#subir {                    /*Punto de anclaje al principio de la página*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/*PARTE DE ABAJO*/      /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+.infoabajo {
+    width: 100%;
+    height: 50%;
+    background-color: rgb(236, 230, 230);
+    display: flex;
+    justify-content: center;
+}
+
+.infoabajo div {
+    margin:8%;
+    margin-top: 8%;
+    color: rgb(87, 84, 84);
+}
+
+.infoabajo li {
+    list-style: none;
+    padding-top: 3px;
+}
+
+.infoabajo a {
+    text-decoration:none;
+    color: rgb(87, 84, 84);
+}
+
+#tituloinfo {
+   color: black;
+   font-size: 17px;
+   font-weight: bold;
+}
+
+.subinfo {
+   background-color: gray;
+   width: 100%;
+   height: 15%;
+   color: white;
+   text-align: center;
+   vertical-align: middle;
+}
+
+.subinfo p {
+   padding-top: 3%;
+   color: white;
+}
+
+.infoabajo li a:hover {
+    text-decoration:none;
+    transition: 0.8s;
+    border-bottom:rgb(87, 84, 84) solid 0.2px;
+}
+
+.enlaces2 {
+    color: white;
+}
+
+/*ZONA DE FAQs*/
+#tema {     /*Tema sobre el que tratan las preguntas*/
+   border: 2px solid transparent;   /*Bordes transparentes para linear-gradient*/
+   border-top: transparent; 
+   border-image: linear-gradient(to right, white 0%, #1cede7 5%, white 60%) 1; 
+   font: 1.7vw 'Zen Dots';
+   margin-top: 3%;
+   margin-left: 3%;
+}
+
+#pregunta{      /*Texto de la pregunta*/
+   margin:1%;
+   margin-left: 6%;
+   letter-spacing: 0.1vw;
+   font-weight: bolder;
+}
+
+#respuesta{         /*Texto en el que se hace la respuesta*/
+   margin-left: 9%;
+   margin-bottom: 3%;
+}

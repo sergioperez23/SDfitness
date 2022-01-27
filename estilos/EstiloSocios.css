@@ -1,0 +1,294 @@
+* {                         /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+    padding: 0mm; /*inicializamos el padding de todos los elementos a 0*/
+    margin: 0mm; /*inicializamos el margin de todos los elementoss a 0*/
+    box-sizing: border-box; /*el tamaño que se de a las cajas va a incluir el borde*/
+    font-family: Arial, Helvetica, sans-serif; /*una fuente manejable y compatible con todos los navegadores*/
+}
+
+
+.top {/*MENU TOP DE LA PAGINA*/      /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+    position:sticky;
+    top: 0%;/*para que esté totalmente pegado arriba. si se ponen mas elementos sticky habra que tener en cuenta el alto de este div*/
+    width: 100%;
+    height: 24px;
+    background-color: black;
+    padding-right: 7%;
+    padding-top: 2px;
+    padding-bottom: 0.2%;      
+    font-size: 15px;    
+    z-index: 100; 
+}    
+
+.fotocab { /*PARTE 2 animacion parte principal*/         
+    width: 100%;
+    height: 30%;
+    background-image: url(../imagenes/img_socios/socios_cabecera.jpg);
+    background-repeat: no-repeat; /*la imagen no se repite*/
+    background-size: 100%; 
+    background-attachment:initial; /*la imagen va a ocupar el div siempre*/
+    background-position: center; /*se centra la imagen*/
+    display: flex;
+    align-items: center; /*propiedad de alineación vertical*/
+    justify-content: center; /*propiedad de alineación horizontal*/
+}
+
+.menu_top li {
+   display: inline;
+   float:right;
+   margin-right: 2%;         
+   text-align: center;
+   border-bottom: transparent; 
+}
+
+.menu_top li a {   
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+    color: white;
+}
+
+.menu_top li a:hover {  
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+    color:rgb(28, 237, 231);
+    transition: 0.4s;
+    border-bottom:rgb(28, 237, 231) solid 0.2px;
+}
+
+/*ANCLA DE VUELTA AL PRINCIPIO*/     /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+.alppo {  /*alppo=al principio*/
+    position: fixed; /*Mantiene su posición fija pese a hacer scroll*/
+    right: 3%;
+    top: 90%;
+    padding: 0.5%;
+    background-color: transparent;
+    border-radius: 12px;
+    color: rgb(5, 39, 38);
+    border: solid 3px #1cede7;
+    transition: 10ms;
+}
+
+.alppo:hover{
+    filter: saturate(400%);
+}
+
+#subir {                    /*Punto de anclaje al principio de la página*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/*ELECCION DE PESTAÑA*/          /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+.pag {/*MENU TOP DE LA PAGINA*/
+    position:sticky;
+    top: 3.3%;
+    height: 10%;
+    background-color: whitesmoke;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;  
+}  
+
+.menu_pag {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.menu_pag li {
+   display: inline;
+   margin-left: 10%; /*se separan las opciones*/
+}
+
+.menu_pag :nth-child(1){
+    margin-left: 0%; /* para q este centrado, este hijo en concreto tiene que tener el margen izquierdo en 0*/
+}
+
+.menu_pag li:hover{
+    border-bottom:rgb(58, 63, 63) solid 0.2px;
+}
+
+.menu_pag li a { 
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+    color: rgb(58, 63, 63);
+}
+
+.menu_pag li a:hover {  
+    text-decoration:none; /*desactiva los estilos por defecto de los likns*/
+}  
+
+.menu_pag div {
+    border-left: gray solid 0.3px;
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+.menu_pag div:nth-child(1){
+    border-left:transparent;
+}
+
+/*FORMULARIO*/
+
+#titulo {               /*Titulo del formulario de inscripción*/
+    font-size: 47px;
+    color: rgb(5, 39, 38);
+    font-family: 'Antonio', sans-serif;
+    text-align: center;
+    padding-bottom: 10px;
+    border-top: solid 1px rgb(5, 39, 38);       /*Bordes arriba y abajo por estética*/
+    border-bottom: solid 1px rgb(5, 39, 38);
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.apartado {         /*Los textos de los apartados dentro del formulario*/
+    font-size: 35px;
+    color: rgb(5, 39, 38);
+    font-family: 'Antonio', sans-serif;
+    border-bottom: solid 1px rgb(5, 39, 38);
+    white-space: nowrap;
+    width: 80%;
+    margin-left: 10%;
+    float: left;
+    text-align:left;
+    margin-bottom: 3%;
+}
+
+.nombreapartados {
+    font: 1.75vw 'Zen Dots', cursive;
+    margin-top: 3%;
+}
+
+.campos1 {              /*Los tres campos de la izquierda*/
+    width: 45%;         /*45% de ancho y separado de la izquierda un 5%*/
+    float: left;
+    margin-bottom: 10%;
+    margin-left: 5%;
+}
+
+.campos2 {              /*Los tres campos de la derecha*/
+    width: 45%;         /*45% de ancho y separado de la derecha un 5%*/
+    float: right;
+    margin-bottom: 10%;
+    margin-right: 5%;
+}
+
+.respuesta {        /*Campos en los que respondes*/
+    width: 70%;
+    height: 5%;
+    font-size: 16px;
+    border: solid 1px gray;
+    border-radius: 7px;
+    color: gray;        /*Color de letra gris*/
+    text-align: center;   /*Que el texto aparezca inicialmente en el centro*/
+}
+
+.respuestafecha {   /*Selector específifco para las tres respuestas que tiene la fecha*/
+    width: 23%;     /*Anchos de 23% y altura de 5%*/
+    height: 5%;
+    font-size: 16px;
+    border: solid 1px gray;
+    border-radius: 7px;
+    color: gray;
+}
+
+/*TARIFAS*/
+
+#tarifas {          
+    width: 100%;
+    display: flex;
+    height: 100%;
+}
+
+.opciontarifa {
+    width: 25%;
+    height: 40%;
+    border: solid 1px black;
+    border-radius: 15%;
+    margin: 5%;
+    background-position: center;    /*Que la foto de fondo aparezca en el centro*/
+    background-repeat: no-repeat;   /*Que la foto no se repita más veces*/
+}
+
+.opciontarifa:hover {       /*Cuando tenga el foco desaturamos un poco todo y le damos una sombra a toda la caja con box-shadow*/
+    filter: opacity(0.9);
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+                      0.3em 0.3em 1em rgba(0, 0, 0, 3);
+}
+
+.textotarifa {      /*Textos de cada tarifa*/
+    width: 24%;
+    height: 30%;
+    margin: 6%;
+    margin-top: -20%;
+}
+
+#elecciontarifa {   /*div donde se encuentra el texto "ELIGE TU TARIFA" y la posterior respuesta*/
+    margin-top: -50%;
+    font: 2vw 'Zen Dots', cursive;
+}
+
+#respuestatarifa {      /*Caja en la que se responderá que tarifa se selecciona*/
+    width: 29%;
+    height: 7%;
+    font-size: 19px;
+    border: solid 1px gray;
+    border-radius: 7px;
+}
+
+/*PARTE DE ABAJO*/           /**************ESTA PARTE ES COMÚN PARA TODAS LAS PÁGINAS, EXPLICADO EN "EstiloInicio"*******************/
+
+.infoabajo {
+    width: 100%;
+    height: 50%;
+    background-color: rgb(236, 230, 230);
+    display: flex;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+.infoabajo div {
+    margin:8%;
+    margin-top: 8%;
+    color: rgb(87, 84, 84);
+}
+
+.infoabajo li {
+    list-style: none;
+    padding-top: 3px;
+}
+
+.infoabajo a {
+    text-decoration:none;
+    color: rgb(87, 84, 84);
+}
+
+#tituloinfo {
+   color: black;
+   font-size: 17px;
+   font-weight: bold;
+}
+
+.subinfo {
+   background-color: gray;
+   width: 100%;
+   height: 15%;
+   color: white;
+   text-align: center;
+   vertical-align: middle;
+}
+
+.subinfo p {
+   padding-top: 3%;
+   color: white;
+}
+
+.infoabajo li a:hover {
+    text-decoration:none;
+    transition: 0.8s;
+    border-bottom:rgb(87, 84, 84) solid 0.2px;
+}
+
+.enlaces2 {
+    color: white;
+}
